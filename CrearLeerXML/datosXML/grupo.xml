@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grupo>
+  <Alumnos>
+    <Alumno>
+      <numControl>1212562</numControl>
+      <Nombres>Karly</Nombres>
+      <Apellidos>Jacobo</Apellidos>
+      <Carrera>Psicologia</Carrera>
+    </Alumno>
+    <Alumno>
+      <numControl>20441266</numControl>
+      <Nombres>Ivan E</Nombres>
+      <Apellidos>Delgado</Apellidos>
+      <Carrera>Informatica</Carrera>
+    </Alumno>
+  </Alumnos>
+</Grupo>
