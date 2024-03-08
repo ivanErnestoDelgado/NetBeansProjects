@@ -1,9 +1,11 @@
+<%-- 
+    Document   : index
+    Created on : 7/03/2024, 07:18:05 AM
+    Author     : SADValenz
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -18,6 +20,11 @@ and open the template in the editor.
             numero 2:
             <input type="text" name="numero2" value=""/>
             <input type="submit" value="apachurra"/>
+            <%   
+            String mensaje=request.getParameter("mensaje");
+            if(mensaje!=null)out.println(mensaje.replace("_", " "));
+            %>
+            
         </form>
     </body>
 </html>

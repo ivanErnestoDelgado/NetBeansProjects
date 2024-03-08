@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebasqlite;
+package conexionDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,15 +12,13 @@ import java.sql.SQLException;
  *
  * @author SADValenz
  */
-public class Connect {
+public class Conexion {
     
-    public static void connect() throws ClassNotFoundException {
+    public static void connect() {
         Connection conn = null;
         try {
-                        Class.forName("org.sqlite.JDBC");
-
             // db parameters
-            String url = "jdbc:sqlite:C:/Users/SADValenz/Desktop/proyecto/my wea.db";
+            String url = "jdbc:sqlite:C:/Users/SADValenz/Desktop/proyecto/my_wea.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             
@@ -38,7 +36,7 @@ public class Connect {
             }
         }
     }
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) {
         connect();
     }
     
