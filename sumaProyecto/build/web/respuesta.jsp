@@ -13,17 +13,17 @@
     </head>
    <body>
         <%
-            String liga="index.html";
             String n1=request.getParameter("numero1");
             String n2= request.getParameter("numero2");
             String Remitente=request.getHeader("referer");
-            float res;
+            boolean parametroPrimeroEsNumerico,parametroSegundoEsNumerico;
+            String mensaje=""; 
+            float resultado=0;
             
             if((n2==null)||(n1==null))
             {
-                String mensaje="";
-                mensaje=(n1==null)?"Num_1":"";
-               mensaje+=(n2==null)?"Num_2":"";
+                mensaje=(n1==null)?"_Numero_1":"";
+               mensaje+=(n2==null)?"_Numero_2":"";
                  mensaje="http://localhost:8080/sumaProyecto/index.jsp?mensaje=Los_Campos_nulos_son:_"+mensaje;
             response.sendRedirect(mensaje);
             return;
@@ -32,35 +32,41 @@
                             response.sendRedirect("http://localhost:8080/sumaProyecto/index.jsp?mensaje=Pagina_de_acceso_invalida");
                             return;
             }
-            
-                    
-           
-           
             if((n1.equals(""))||(n2.equals(""))){
-               String mensaje=""; 
-               mensaje=(n1=="")?"Num_1":"";
-               mensaje+=(n2=="")?"Num_2":"";
+               mensaje=(n1=="")?"_Numero_1":"";
+               mensaje+=(n2=="")?"_Numero_2":"";
              mensaje="http://localhost:8080/sumaProyecto/index.jsp?mensaje=Los_Campos_vacios_son:"+mensaje;
             response.sendRedirect(mensaje);
             return;
             }
             
-            try{
-                if(n1.matches("")){}
-                res=Float.parseFloat(n1)+Float.parseFloat(n2);
-                out.println("Todo bien loco"+"<br>");
-            }catch(NumberFormatException e){
-             
-             String mensaje="http://localhost:8080/sumaProyecto/index.jsp?mensaje=Los_Campos_mal_escritos_son:_";
+            try {
+                    resultado+=Float.parseFloat(n1);
+                    parametroPrimeroEsNumerico=true;
+                } catch (Exception e) {
+                    parametroPrimeroEsNumerico=false;
+                }
+            
+            try {
+                    resultado+=Float.parseFloat(n2);
+                    parametroSegundoEsNumerico=true;
+                } catch (Exception e) {
+                    
+                    parametroSegundoEsNumerico=false;
+                }
+            if(!(parametroPrimeroEsNumerico&&parametroSegundoEsNumerico)){
+                mensaje=(parametroPrimeroEsNumerico)?"":"_Numero_1";
+               mensaje+=(parametroSegundoEsNumerico)?"":"_Numero_2";
+                mensaje="http://localhost:8080/sumaProyecto/index.jsp?mensaje=Los_Campos_mal_escritos_son:_"+mensaje;
              response.sendRedirect(mensaje);
             return;
-            };
+            }
         %>
         
         
-        <%=n1%> +<%=n2%><b>=<%=res%></b><br>
+        <%=n1%> +<%=n2%><b>=<%=resultado%></b><br>
         
-        <%=Remitente%>
+       
         
         
     </body>

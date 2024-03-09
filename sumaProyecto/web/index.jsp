@@ -20,11 +20,10 @@
             numero 2:
             <input type="text" name="numero2" value=""/>
             <input type="submit" value="apachurra"/>
-            <%   
+        </form> <br>
+        <%   
             String mensaje=request.getParameter("mensaje");
             if(mensaje!=null)out.println(mensaje.replace("_", " "));
             %>
-            
-        </form>
     </body>
 </html>
