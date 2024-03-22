@@ -14,13 +14,16 @@
     <body>
         <%
         HttpSession sesion= request.getSession();
-           String profesores="medelAMLO,Faustinho,Ileanovsky";
-           sesion.setAttribute("docentes", profesores);
+        
+        if(!(sesion.isNew())){
+            sesion.invalidate();
+        }
+           
            %>
            
            <h1>Ingrese alumno</h1>
-           <form action="segunda.jsp">
-            Usuario: <input type="text" name="Usuario"/> <br>
+           <form action="Intermedio.jsp">
+            Nombre: <input type="text" name="Usuario"/> <br>
             Contraseña: <input type="text" name="Contrasena" /> <br>
             Materias a seleccionar:<br>
             <input type="checkbox" name="Lastima1" value="ON" checked="checked"/> Lastima l
@@ -29,10 +32,14 @@
             Genero:
             <select name="Genero">
                 <option>Mujer</option>
-                <option>Otres:</option>
+                <option>Otros</option>
                 <option>Hombre</option>
             </select><br>
             <br><input type="submit" value="apachurra">
         </form>
+           <%
+           String mensaje=request.getParameter("mensaje");
+           if(!(mensaje==null))out.println("<br>"+mensaje.replace("_", " "));
+           %>
     </body>
 </html>

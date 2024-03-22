@@ -4,6 +4,7 @@
     Author     : SADValenz
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,24 +14,21 @@
     </head>
     <body>
         <% 
-            String Materia= request.getParameter("materia");
-            out.println(Materia.replace("_"," "));
+            String Materia= request.getParameter("materia").replace("_"," ");
+            out.println(Materia);
             HttpSession sesion= request.getSession();
-            String profesores=(String) sesion.getAttribute("docentes");
-            String profesoresfiltrados=profesores;
+            ArrayList<String> profesoresDisponibles=(ArrayList<String>) sesion.getAttribute("docentes");
+            ArrayList<String> materiasEscogidas=(ArrayList<String>) sesion.getAttribute("materiasEscogidas");
             
-            if(Materia.contains("Lastima")) profesoresfiltrados=(profesores.replace(",Ileanovsky",""));
-            String[] arregloProfes=profesoresfiltrados.split(",");
+            ArrayList<String> profesores=(ArrayList<String>)profesoresDisponibles.clone();
             
-            
-            String materias_profes= (sesion.getAttribute("Materias_Profes"))==null?"":(String)sesion.getAttribute("Materias_Profes");
-            sesion.removeAttribute("Materias_Profes");
-            materias_profes+=Materia+": ";
-            
+            materiasEscogidas.add(Materia);
+            if(Materia.contains("Lastima"))profesores.remove("Ileanovsky");
             
             if(Materia.contains("Drama")){
             sesion.removeAttribute("DOA");
             }
+            
             if(Materia.contains("Lloriqueos")){
             sesion.removeAttribute("Lloriqueos2");
             }
@@ -38,12 +36,12 @@
             sesion.removeAttribute("lastima1");
             }
             
-            sesion.setAttribute("Materias_Profes", materias_profes);
-            if(!(profesoresfiltrados.length()<3)){
+            
+            if(!(profesores.isEmpty())){
             out.println("<br>Escoger profesor <br>");
             out.println("<form action=\"segunda.jsp\">");
            
-           for (String profe : arregloProfes) {
+           for (String profe : profesores) {
                    out.println(" <input type=\"radio\" name=\"profesores\" value=\""+profe+"\" checked=\"checked\"/>"+profe+"<br>");
                }
            out.println("<input type=\"submit\" value=\"Escoger\">");
