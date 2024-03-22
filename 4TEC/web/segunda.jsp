@@ -96,6 +96,22 @@
                 
                 String usuario=(String) sesion.getAttribute("usuario");
                 String contrasena=(String) sesion.getAttribute("contrasena");
+                
+                PreparedStatement comprobacion = con.prepareStatement(
+                        "SELECT * FROM alumnos where nombre=?;");
+                
+                comprobacion.setString(1, usuario);
+                
+                ResultSet resultadoComprobacion = comprobacion.executeQuery();
+                String existencia="";
+                while (resultadoComprobacion.next()) {
+                    
+                    existencia= resultadoComprobacion.getString(2);
+                }
+                if(!(existencia.equals("")))return;
+                
+                
+                
                 PreparedStatement consultaUsuario = con.prepareStatement(
                         "insert into alumnos(nombre,clave,genero) values(?,?,?)");
                 
