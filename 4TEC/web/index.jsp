@@ -25,17 +25,7 @@
            <form action="Intermedio.jsp">
             Nombre: <input type="text" name="Usuario"/> <br>
             Contraseña: <input type="text" name="Contrasena" /> <br>
-            Materias a seleccionar:<br>
-            <input type="checkbox" name="Lastima1" value="ON" checked="checked"/> Lastima l
-            <input type="checkbox" name="Lloriqueos2" value="ON" /> Lloriqueos ll
-            <input type="checkbox" name="DOA" value="ON"/> Drama orientado a objetos <br>
-            Genero:
-            <select name="Genero">
-                <option>Mujer</option>
-                <option>Otros</option>
-                <option>Hombre</option>
-            </select><br>
-            <br><input type="submit" value="apachurra">
+            <br><input type="submit" value="Siguiente">
         </form>
            <%
            String mensaje=request.getParameter("mensaje");

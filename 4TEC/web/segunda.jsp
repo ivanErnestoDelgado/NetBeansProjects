@@ -91,7 +91,8 @@
             }
             Connection con = null;
             try {
-                con = DriverManager.getConnection("jdbc:sqlite:C:/SQlite/4TEC");
+                String ruta="C://Users/SADValenz/Documents/NetBeansProjects/4TEC/4TEC";
+                con = DriverManager.getConnection("jdbc:sqlite:"+ruta);
                 
                 
                 String usuario=(String) sesion.getAttribute("usuario");
@@ -108,7 +109,10 @@
                     
                     existencia= resultadoComprobacion.getString(2);
                 }
-                if(!(existencia.equals("")))return;
+                if(!(existencia.equals(""))){
+                    out.println("<a href=\"http://localhost:8080/4TEC/index.jsp\">Regresar</a>");
+                    return;
+                }
                 
                 
                 
@@ -166,6 +170,7 @@
                 //imprimo la id del alumno
                 out.println("<h3>tu ID es la siguiente: "+resultado+"<br>");
                 out.println("Gardala bien</h3>");
+                out.println("<a href=\"http://localhost:8080/4TEC/index.jsp\">Regresar</a>");
                 
             } catch (SQLException e) {
                 e.printStackTrace();

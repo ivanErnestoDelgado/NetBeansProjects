@@ -16,8 +16,26 @@
     </head>
     <body>
         <%
-            String usuario=request.getParameter("Usuario");
-            String contrasena=request.getParameter("Contrasena");
+            HttpSession sesion= request.getSession();
+            String procedencia=request.getHeader("referer");
+            if((procedencia==null)||(!procedencia.contains("http://localhost:8080/4TEC/"))){
+                response.sendRedirect("http://localhost:8080/4TEC/index.jsp");
+            }
+            
+            String Registro=request.getParameter("Registro");
+            
+            String usuario;
+            String contrasena;
+            
+            
+            if(Registro!=null){
+            usuario=(String) sesion.getAttribute("usuario");
+            contrasena=(String) sesion.getAttribute("contrasena");
+            }else{
+            usuario=request.getParameter("Usuario");
+            contrasena=request.getParameter("Contrasena");
+            }
+            
             if((usuario==null)||(contrasena==null)){
             response.sendRedirect("http://localhost:8080/4TEC/index.jsp");
             }
@@ -35,8 +53,8 @@
             }
             Connection con = null;
             try {
-                con = DriverManager.getConnection("jdbc:sqlite:C:/SQlite/4TEC");
-                
+                String ruta="C://Users/SADValenz/Documents/NetBeansProjects/4TEC/4TEC";
+                con = DriverManager.getConnection("jdbc:sqlite:"+ruta);
                 PreparedStatement prep = con.prepareStatement(
                         "SELECT * FROM alumnos where nombre=?;");
                 
@@ -54,14 +72,11 @@
                     out.println("Tu genero es "+rs.getString(4)+"<br>");
                 }
                 if(resultado.equals("")){
-                    out.println("Usuario nuevo <br> ¿Desea registrarse?");
-                    out.println("<a href=\"http://localhost:8080/4TEC/registro.jsp\">Si</a> o");
-                    out.println("<a href=\"http://localhost:8080/4TEC/index.jsp\">No</a>");
-                    
-                    HttpSession sesion= request.getSession();
                     
                     
-            
+             
+                    
+            //Extraigo los profesores de la base de datos
                 ArrayList<String> profesores=new ArrayList<>();
                 PreparedStatement profes = con.prepareStatement(
                         "SELECT * FROM profesores");
@@ -71,27 +86,36 @@
                     resultado= resultadoProfes.getString(2);
                     profesores.add(resultado);
                 }
-                
-                String lastima1= request.getParameter("Lastima1");
-                String Lloriqueos2= request.getParameter("Lloriqueos2");
-                String DOA= request.getParameter("DOA");
-                String Genero= request.getParameter("Genero");
-
                 sesion.setAttribute("docentes", profesores);
                 
-                sesion.setAttribute("Genero", Genero);
-                if(DOA!=null){
-                sesion.setAttribute("DOA", DOA);
-                }
-                if(Lloriqueos2!=null){
-                sesion.setAttribute("Lloriqueos2", Lloriqueos2);
-                }
-                if(lastima1!=null){
-                sesion.setAttribute("lastima1", lastima1);
-                }
+                
                 
                 sesion.setAttribute("usuario", usuario);
                 sesion.setAttribute("contrasena", contrasena);
+                
+                
+                
+                if(Registro!=null){
+                out.println("<h1>Ingrese datos</h1>");
+                out.println("<form action=\"registro.jsp\">");
+                out.println("Materias a seleccionar:<br>");
+                out.println("<input type=\"checkbox\" name=\"Lastima1\" value=\"ON\" checked=\"checked\"/> Lastima l");
+                out.println("<input type=\"checkbox\" name=\"Lloriqueos2\" value=\"ON\" /> Lloriqueos ll");
+                out.println("<input type=\"checkbox\" name=\"DOA\" value=\"ON\"/> Drama orientado a objetos <br>");
+                out.println("Genero:");
+                out.println("<select name=\"Genero\">");
+                out.println("<option>Mujer</option>");
+                out.println("<option>Otros</option>");
+                out.println("<option>Hombre</option>");
+                out.println("</select><br>");
+                out.println("<br><input type=\"submit\" value=\"Enviar\">");
+                out.println("</form>");
+                return;
+                }
+            
+                out.println("Usuario nuevo <br> ¿Desea registrarse?");
+                    out.println("<a href=\"http://localhost:8080/4TEC/Intermedio.jsp?Registro=Si\">Si</a> o");
+                    out.println("<a href=\"http://localhost:8080/4TEC/index.jsp\">No</a>");
                 
                     return;
                 }
@@ -160,7 +184,8 @@
 
         %>
         
+           
+            
        
-        
     </body>
 </html>

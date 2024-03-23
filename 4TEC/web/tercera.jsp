@@ -22,7 +22,7 @@
             
             ArrayList<String> profesores=(ArrayList<String>)profesoresDisponibles.clone();
             
-            materiasEscogidas.add(Materia);
+            if(!(materiasEscogidas.contains(Materia)))materiasEscogidas.add(Materia);
             if(Materia.contains("Lastima"))profesores.remove("Ileanovsky");
             
             if(Materia.contains("Drama")){
