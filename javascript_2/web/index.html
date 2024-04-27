@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Encuesta</title>
+    </head>
+    <script>
+        function cambio(){
+            var form = document.getElementById("resp");
+            if(document.getElementById("muj").checked===true){
+                document.getElementById("gen").innerHTML="&iquest;Has quedado embarazada?";    
+                form.removeAttribute("hidden","");
+            }
+            if(document.getElementById("hom").checked===true){
+                document.getElementById("gen").innerHTML="&iquest;Eres hombre?";
+                form.setAttribute("hidden","hidden");
+            }
+        }
+    </script>
+    <body onload="cambio();">
+        <h3>Selecciona tu genero</h3>
+        <input type="radio" id="muj" name="m" value="" onclick="cambio();" checked="checked"/>Mujer
+        <input type="radio" id="hom" name="m" value="" onclick="cambio();"/>Hombre
+        <p id="gen"/>
+        
+        <form id="resp" hidden="hidden">
+            <input type="radio" id="si" name="selec" value="">Si 
+            <input type="radio" id="no" name="selec" value="">No
+        </form>
+    </body>
+</html>

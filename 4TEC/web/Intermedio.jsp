@@ -17,6 +17,7 @@
     <body>
         <%
             HttpSession sesion= request.getSession();
+            
             String procedencia=request.getHeader("referer");
             if((procedencia==null)||(!procedencia.contains("http://localhost:8080/4TEC/"))){
                 response.sendRedirect("http://localhost:8080/4TEC/index.jsp");

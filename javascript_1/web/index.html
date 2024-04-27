@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <script>
+        function alertar(){
+            /*
+            document.getElementById("parrafo").innerHTML="Texto GOD";
+            
+            alert('Jp AAAAAAAAAAA');
+            
+            a=prompt("¿Como te llamas guapo?");
+            alert("Hola "+a);
+            */
+           
+        }
+        function sumar(){
+            
+        try{
+            var x=0;
+            var y=0;
+           x=parseInt(document.getElementById("x").value);
+           y=parseInt(document.getElementById("y").value);
+          var res=x+y;
+          document.getElementById("resultado").innerHTML=res;
+       }catch(e){
+          alert(e); 
+       }
+        }
+        
+    </script>
+    <body>
+        <input type="button" value="apachurra" id="boton" onclick="alertar();"/>
+        <p id="parrafo">Texto ZZZZZZ</p>
+        
+        <input type="text"  id="x" value=""/>
+        +
+        <input type="text"  id="y" value=""/>
+        
+        <input type="button" value="apachurra" id="boton" onclick="sumar();"/>
+        <p id="resultado">Resultado pa</p> 
+    </body>
+</html>

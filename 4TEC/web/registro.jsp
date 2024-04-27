@@ -31,7 +31,6 @@
                 String Lloriqueos2= request.getParameter("Lloriqueos2");
                 String DOA= request.getParameter("DOA");
                 
-
                 
                 
                 

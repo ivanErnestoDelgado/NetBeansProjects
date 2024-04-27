@@ -1,0 +1,388 @@
+
+#cuerpo-Registro {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(10deg, #312ecf, #4d76fd, #66c7ff); 
+    margin:0;
+    
+    box-shadow: inset 100px 100px 400px rgba(101, 224, 255, 0.856);
+    height: 100vh;
+}
+#cuerpo-Inicio {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(50deg, #312ecf, #4d76fd, #66c7ff); 
+    margin:0;
+
+    box-shadow: inset 0px 0 400px rgba(101, 224, 255, 0.856);
+    height: 100vh;
+}
+#cuerpo-Final{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(50deg, #312ecf, #4d76fd, #66c7ff); 
+    margin:0;
+    
+    box-shadow: inset 0px 0 400px rgba(101, 224, 255, 0.856);
+    height: 100vh;
+}
+.decision-Form{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    height: 200px;
+    width: 400px;
+    border-radius: 30px;
+    text-align: center;
+    
+    h1{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    h3{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    
+}
+.registro-Form{
+    
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 350px;
+    border-radius: 30px;
+    
+    #titulo-Index{
+        color: whitesmoke;
+        text-align: center;
+        font-size: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .contenedor-ID{
+        color: whitesmoke;
+        padding-left: 85px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+    .contenedor-Contrasena{
+        color: whitesmoke;
+        padding-left: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+    #ID{
+        border-radius: 5px;
+        border-color: lightblue;
+    }
+    #contrasena{
+        border-radius: 5px;
+        border-color: lightblue;
+    }
+    #boton-Iniciar{
+        width: 100px;
+        height: 35px;
+        margin-left: 125px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 8px;
+        border-color: lightblue;
+        font-size: 17px;
+    }
+    #boton-Iniciar:hover{
+        color: rgba(0, 53, 199, 0.822);
+        
+    }
+}
+
+.boton-Registro{
+    width: 100px;
+    height: 35px;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    border-color: lightblue;
+    font-size: 17px;
+}
+.boton-Registro:hover{
+    color: rgba(0, 53, 199, 0.822);
+}
+
+#botonReiniciarRegistro{
+    width: 175px;
+    height: 35px;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    border-color: lightblue;
+    font-size: 17px;
+    margin-right: 180px;
+}
+
+#botonReiniciarRegistro:hover{
+    color: rgba(0, 53, 199, 0.822);
+}
+
+.datosIniciales-Form{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+    h1{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        font-size: 30px;
+    }
+    .ckeck-Registro{
+        height: 12px;
+        width: 12px;
+    }
+    #genero{
+        border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 25px;
+        width: 80px;
+        text-align: center;
+    }
+
+}
+
+#Otros{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+
+    .boton-GeneroOtros{
+    width: 100px;
+    height: 35px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    border-color: lightblue;
+    font-size: 17px;
+    }
+    .boton-GeneroOtros:hover{
+        color: rgb(30, 86, 207);
+    }
+}
+
+#Hombre{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+#Mujer{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+}
+#divDOO{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+}
+#divLastima{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+}
+#divLloriqueos{
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+.contenedor-Controles{
+    height: 300px;
+    width: 200px;   
+}
+#esqueleto{
+    border-collapse: collapse;
+}
+#esqueleto td,#esqueleto tr{
+    border:0;
+}
+#encabezado{
+    display: flex;
+    height: 50px;
+    width: 400px;
+
+    h1{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 60px;
+    } 
+}
+
+#contenedor-Informacion-estilo{
+    font-family: Arial, Helvetica, sans-serif;
+    color:whitesmoke;
+    margin-top: 20%;
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 250px;
+    width: 475px;
+    border-radius: 30px;
+    h2{
+        text-align: center;
+        margin-left:0;
+    }
+    p{
+        margin-left: 30px;
+    }
+}
+#encabezado-Inicio{
+    display: flex;
+    height: 100px;
+    width: 400px;
+
+    h1{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 40px;
+    } 
+}
+#esqueleto-Inicio{
+    height: fit-content;
+    width: fit-content;
+
+}
+#mensaje-error{
+    h2{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 70px;
+    } 
+}
+#informacion-registrada-estilo{
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 400px;
+    width: 475px;
+    border-radius: 30px;
+    margin-top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    color:whitesmoke;
+ 
+    h1{
+        margin-left: 30px;
+    }
+    h2{
+        text-align: center;
+    }
+    h3{
+        margin-left: 30px;
+    }
+    p{
+        margin-left: 60px;
+    }
+    
+    #enlaceRegreso{
+        font-size: 20px;
+        margin-left: 320px;
+    }
+    #enlaceRegreso:hover{
+        font-size: 170%;
+    }
+}
+#encabezado-Final{
+    display: flex;
+    height: 100px;
+    width: 500px;
+    margin-left: 30px;
+    h1{
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+
+    } 
+}
+#informacion-registrada-final{
+    display: block;
+    background-color: rgb(30, 86, 207);
+    align-content: center;
+    height: 400px;
+    width: 475px;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:whitesmoke;
+   
+    h2{
+        text-align: center;
+    }
+    h3{
+        margin-left: 30px;
+    }
+    p{
+        margin-left: 60px;
+    }
+    
+    #enlaceRegreso{
+        font-size: 20px;
+        margin-left: 320px;
+    }
+    #enlaceRegreso:hover{
+        font-size: 170%;
+    }
+
+}
