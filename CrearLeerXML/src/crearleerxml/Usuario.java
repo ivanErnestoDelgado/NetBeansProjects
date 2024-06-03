@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package crearleerxml;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ public class Usuario {
     private String nombres;
     private String apellidos;
     private String carrera;
+    
 
     public Usuario(String numControl, String nombres, String apellidos, String carrera) {
         this.numControl = numControl;

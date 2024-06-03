@@ -17,8 +17,9 @@
         
     </head>
     <%
-            HttpSession sesion= request.getSession();
-            String inicioRuta="http://localhost:8080/4TEC_Javascript/";
+        String inicioRuta="http://localhost:8080/4TEC_Javascript/";    
+        HttpSession sesion= request.getSession();
+            
             
             String procedencia=request.getHeader("referer");
             if((procedencia==null)||(!procedencia.contains(inicioRuta))){
